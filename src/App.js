@@ -1,7 +1,13 @@
 import React from 'react';
+import {Router} from 'react-router-dom'
+
+import Routes from './route'
+import history from './service/history'
 
 export default function App() {
   return (
-    <h1>Go Barber Web</h1>
+    <Router history={history}>
+      <Routes />
+    </Router>
   );
 }
