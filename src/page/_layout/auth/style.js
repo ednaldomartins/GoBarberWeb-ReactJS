@@ -28,6 +28,13 @@ export const Content = styled.div`
       margin: 0 0 8px;
     }
 
+    /* estilização do erro */
+    span {
+      color: #c30000;
+      align-self: flex-start;
+      margin: 0 16px 8px;
+    }
+
     button {
       margin: 8px 0 0;
       height: 32px;
