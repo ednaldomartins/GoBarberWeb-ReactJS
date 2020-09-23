@@ -27,11 +27,11 @@ export const Content = styled.div`
       font-weight: bold;
       color: #00b2cc;
     }
+  }
 
-    aside {
-      display: flex;
-      align-items: center;
-    }
+  aside {
+    display: flex;
+    align-items: center;
   }
 `;
 
