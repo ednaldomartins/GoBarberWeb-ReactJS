@@ -35,6 +35,7 @@ export const NotificationList = styled.ul`
   background: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   padding: 16px 8px;
+  display: ${(props) => (props.visible ? 'block' : 'none')};
 
   /* triangulo */
   &::before {
