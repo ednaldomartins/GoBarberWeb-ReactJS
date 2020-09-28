@@ -8,7 +8,6 @@ import {
   setMinutes,
   setSeconds,
   isBefore,
-  isEqual,
   parseISO,
 } from 'date-fns';
 import pt from 'date-fns/locale/pt';
@@ -45,13 +44,12 @@ export default function Dashboard() {
         return {
           time: `${hour}:00h`,
           past: isBefore(compareDate, new Date()),
-          appointment: res.data.find((apt) =>
-            isEqual(parseISO(apt.date), compareDate)
+          appointment: res.data.find(
+            (apt) => String(parseISO(apt.date)) === String(checkDate)
           ),
         };
       });
 
-      console.log(res)
       setSchedule(data);
     }
 
@@ -82,9 +80,7 @@ export default function Dashboard() {
         {schedules.map((time) => (
           <Time key={time.time} past={time.past} available={!time.appointment}>
             <strong>{time.time}</strong>
-            <span>
-              {time.appointment ? time.appointment.user.name : 'Livre'}
-            </span>
+            <span>{time.appointment ? time.appointment.user_id : 'Livre'}</span>
           </Time>
         ))}
       </ul>
